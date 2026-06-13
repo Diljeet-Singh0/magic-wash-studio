@@ -1,7 +1,8 @@
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, useMotionValue, useSpring } from "framer-motion";
 import { useRef } from "react";
 import { ArrowRight, Sparkles, Star } from "lucide-react";
 import heroCar from "@/assets/hero-car.jpg";
+import { Scene3D } from "./Scene3D";
 
 export function Hero() {
   const ref = useRef<HTMLDivElement>(null);
@@ -10,8 +11,29 @@ export function Hero() {
   const scale = useTransform(scrollYProgress, [0, 1], [1, 1.1]);
   const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
+  // mouse-tracking 3D tilt for the hero card
+  const rotateX = useSpring(useMotionValue(0), { stiffness: 100, damping: 15 });
+  const rotateY = useSpring(useMotionValue(0), { stiffness: 100, damping: 15 });
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const px = (e.clientX - rect.left) / rect.width - 0.5;
+    const py = (e.clientY - rect.top) / rect.height - 0.5;
+    rotateY.set(px * 20);
+    rotateX.set(-py * 20);
+  };
+  const handleMouseLeave = () => {
+    rotateX.set(0);
+    rotateY.set(0);
+  };
+
   return (
     <section ref={ref} className="relative min-h-screen overflow-hidden bg-gradient-hero pt-32">
+      {/* 3D WebGL scene background */}
+      <div className="pointer-events-none absolute inset-0 opacity-70">
+        <Scene3D />
+      </div>
+
       {/* animated grid */}
       <div
         className="absolute inset-0 opacity-30"
@@ -124,15 +146,20 @@ export function Hero() {
             </motion.div>
           </div>
 
-          {/* 3D Hero image */}
+          {/* 3D Hero image with mouse-tilt */}
           <motion.div
             style={{ y, scale }}
             initial={{ opacity: 0, x: 60 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, delay: 0.3 }}
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseLeave}
             className="perspective-1000 relative"
           >
-            <div className="animate-float-3d preserve-3d relative">
+            <motion.div
+              style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
+              className="animate-float-3d relative"
+            >
               <div className="absolute -inset-6 rounded-3xl bg-gradient-aqua opacity-30 blur-3xl" />
               <div className="relative overflow-hidden rounded-3xl border border-border glass-card">
                 <img
@@ -167,8 +194,8 @@ export function Hero() {
               </motion.div>
             </div>
           </motion.div>
-        </div>
-      </motion.div>
+            </motion.div>
+          </motion.div>
     </section>
   );
 }
