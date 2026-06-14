@@ -77,14 +77,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "AquaDrive — Premium Mobile Car Wash & Detailing" },
+      { name: "description", content: "Eco-friendly mobile car wash and professional detailing delivered to your door. Book ceramic coating, interior & exterior detailing by trained pros." },
+      { name: "author", content: "AquaDrive" },
+      { property: "og:title", content: "AquaDrive — Premium Mobile Car Wash" },
+      { property: "og:description", content: "Premium mobile car wash and detailing delivered to your door." },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
+      { property: "og:site_name", content: "AquaDrive" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
       {
@@ -92,7 +92,29 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: appCss,
       },
     ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: "AquaDrive",
+          description: "Premium mobile car wash and detailing service.",
+          url: "/",
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          name: "AquaDrive",
+          url: "/",
+        }),
+      },
+    ],
   }),
+
   shellComponent: RootShell,
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
