@@ -56,9 +56,11 @@ export function Packages() {
             <motion.div
               key={p.name}
               initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.1 }}
-              className={`glass-card relative overflow-hidden rounded-3xl p-8 ${
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ delay: i * 0.12, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+              whileHover={{ y: -8 }}
+              className={`glass-card hover-lift shine-hover relative overflow-hidden rounded-3xl p-8 ${
                 p.featured ? "border-aqua/50 animate-pulse-glow lg:-translate-y-4 lg:scale-105" : ""
               }`}
             >
