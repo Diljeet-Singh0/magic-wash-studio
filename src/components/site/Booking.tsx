@@ -56,13 +56,13 @@ export function Booking() {
               ) : (
                 <>
                   <div className="grid gap-4 sm:grid-cols-2">
-                    <Field label="Full name" name="name" placeholder="Rohan Mehta" required />
+                    <Field label="Full name" name="name" placeholder="James Wilson" required />
                     <Field label="Phone" name="phone" placeholder="+64 21 234 5678" required />
 
                   </div>
-                  <Field label="Car model" name="car" placeholder="Honda City 2022" required />
+                  <Field label="Car model" name="car" placeholder="Toyota Corolla 2022" required />
                   <div className="grid gap-4 sm:grid-cols-2">
-                    <Select label="Package" name="pkg" options={["Express — ₹299", "Premium — ₹899", "Showroom — ₹2,499"]} />
+                    <Select label="Package" name="pkg" options={["Express — NZ$39", "Premium — NZ$99", "Showroom — NZ$249"]} />
                     <Field label="Preferred date" name="date" type="date" required />
                   </div>
                   <Field label="Address" name="address" placeholder="Where should we come?" required />
