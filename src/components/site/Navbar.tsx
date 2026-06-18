@@ -26,7 +26,7 @@ export function Navbar() {
       <div className="fixed inset-x-0 top-0 z-[60] border-b border-white/[0.05] bg-background/85 backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-2 text-[10px]">
           <p className="font-mono uppercase tracking-[0.28em] text-muted-foreground">
-            <span className="text-gold">●</span>&nbsp;&nbsp;Mumbai · Pune · Bangalore
+            <span className="text-gold">●</span>&nbsp;&nbsp;Auckland · Wellington · Christchurch
           </p>
           <a
             href="tel:+918000000000"

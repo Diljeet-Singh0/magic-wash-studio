@@ -48,9 +48,9 @@ export const Route = createFileRoute("/")({
           "@type": "LocalBusiness",
           name: "AquaDrive",
           description: "Premium mobile car wash and detailing service.",
-          telephone: "+91 98765 43210",
-          areaServed: ["Mumbai", "Delhi", "Bangalore"],
-          priceRange: "₹₹",
+          telephone: "+64 21 234 5678",
+          areaServed: ["Auckland", "Wellington", "Christchurch"],
+          priceRange: "$$",
         }),
       },
       {
@@ -84,7 +84,7 @@ function Index() {
       <Packages />
       <Process />
       <Gallery />
-      <Marquee items={["12,400 cars finished", "4.9 average rating", "Mumbai · Delhi · Bangalore", "Booking in 60 seconds", "Written warranty"]} />
+      <Marquee items={["12,400 cars finished", "4.9 average rating", "Auckland · Wellington · Christchurch", "Booking in 60 seconds", "Written warranty"]} />
       <Testimonials />
       <Booking />
       <FAQ />

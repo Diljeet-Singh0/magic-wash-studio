@@ -57,7 +57,8 @@ export function Booking() {
                 <>
                   <div className="grid gap-4 sm:grid-cols-2">
                     <Field label="Full name" name="name" placeholder="Rohan Mehta" required />
-                    <Field label="Phone" name="phone" placeholder="+91 98765 43210" required />
+                    <Field label="Phone" name="phone" placeholder="+64 21 234 5678" required />
+
                   </div>
                   <Field label="Car model" name="car" placeholder="Honda City 2022" required />
                   <div className="grid gap-4 sm:grid-cols-2">

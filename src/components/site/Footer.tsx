@@ -49,7 +49,7 @@ export function Footer() {
           <div>
             <h4 className="text-sm font-bold uppercase tracking-wider">Reach us</h4>
             <ul className="mt-4 space-y-3 text-sm text-muted-foreground">
-              <li className="flex gap-2"><Phone className="h-4 w-4 text-aqua" /> +91 98765 43210</li>
+              <li className="flex gap-2"><Phone className="h-4 w-4 text-aqua" /> +64 21 234 5678</li>
               <li className="flex gap-2"><Mail className="h-4 w-4 text-aqua" /> hi@aquadrive.in</li>
               <li className="flex gap-2"><MapPin className="h-4 w-4 text-aqua" /> Mumbai • Delhi • Bangalore</li>
             </ul>

@@ -44,7 +44,7 @@ export function Hero() {
             </span>
           </div>
           <span className="font-mono text-[10px] uppercase tracking-[0.35em] text-gold">
-            Est. 2014 · India
+            Est. 2014 · New Zealand
           </span>
         </motion.div>
 
