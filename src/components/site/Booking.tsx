@@ -1,6 +1,9 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, Navigation, MapPin } from "lucide-react";
+
+const MAPS_DIRECTIONS_URL =
+  "https://www.google.com/maps/dir/?api=1&destination=Aquadrive+Mobile+Car+Wash+Auckland+NZ";
 
 export function Booking() {
   const [sent, setSent] = useState(false);
@@ -34,6 +37,24 @@ export function Booking() {
                 <li className="flex gap-2"><CheckCircle2 className="h-4 w-4 shrink-0" /> Trained detailers</li>
                 <li className="flex gap-2"><CheckCircle2 className="h-4 w-4 shrink-0" /> 100% satisfaction guarantee</li>
               </ul>
+
+              <div className="mt-8 rounded-2xl border border-primary-foreground/20 bg-primary-foreground/10 p-4 backdrop-blur">
+                <p className="flex items-start gap-2 text-xs font-semibold uppercase tracking-wider text-primary-foreground/90">
+                  <MapPin className="mt-0.5 h-3.5 w-3.5 shrink-0" />
+                  Visit our studio
+                </p>
+                <p className="mt-2 text-sm text-primary-foreground/80">
+                  24 Customs Street West, Auckland CBD 1010
+                </p>
+                <a
+                  href={MAPS_DIRECTIONS_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-3 inline-flex items-center gap-2 rounded-full bg-primary-foreground px-4 py-2 text-xs font-semibold text-primary transition-transform hover:scale-[1.03]"
+                >
+                  <Navigation className="h-3.5 w-3.5" /> Get directions
+                </a>
+              </div>
             </div>
 
             <form

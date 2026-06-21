@@ -1,4 +1,7 @@
-import { Droplets, Camera, Globe, Send, Mail, Phone, MapPin } from "lucide-react";
+import { Droplets, Camera, Globe, Send, Mail, Phone, MapPin, Navigation } from "lucide-react";
+
+const MAPS_DIRECTIONS_URL =
+  "https://www.google.com/maps/dir/?api=1&destination=Aquadrive+Mobile+Car+Wash+Auckland+NZ";
 
 export function Footer() {
   return (
@@ -51,7 +54,17 @@ export function Footer() {
             <ul className="mt-4 space-y-3 text-sm text-muted-foreground">
               <li className="flex gap-2"><Phone className="h-4 w-4 text-aqua" /><a href="tel:+64212345678" className="transition-colors hover:text-foreground">+64 21 234 5678</a></li>
               <li className="flex gap-2"><Mail className="h-4 w-4 text-aqua" /> hi@aquadrive.co.nz</li>
-              <li className="flex gap-2"><MapPin className="h-4 w-4 text-aqua" /> Auckland • Wellington • Christchurch</li>
+              <li className="flex gap-2"><MapPin className="h-4 w-4 shrink-0 text-aqua" /> 24 Customs Street West, Auckland CBD 1010</li>
+              <li>
+                <a
+                  href={MAPS_DIRECTIONS_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full border border-aqua/40 px-3.5 py-1.5 text-xs font-medium text-aqua transition-colors hover:bg-aqua hover:text-primary-foreground"
+                >
+                  <Navigation className="h-3.5 w-3.5" /> Get directions
+                </a>
+              </li>
             </ul>
           </div>
         </div>
