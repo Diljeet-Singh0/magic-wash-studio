@@ -1,6 +1,6 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import { ArrowUpRight, Star } from "lucide-react";
+import { ArrowUpRight, Phone, Star } from "lucide-react";
 import heroCar from "@/assets/hero-car.jpg";
 
 export function Hero() {
@@ -97,6 +97,17 @@ export function Hero() {
                 </span>
               </a>
             </motion.div>
+
+            <motion.a
+              href="tel:+64212345678"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.55 }}
+              className="mt-5 inline-flex items-center gap-2 text-[13px] font-medium uppercase tracking-[0.2em] text-muted-foreground transition-colors hover:text-gold"
+            >
+              <Phone className="h-3.5 w-3.5" />
+              +64 21 234 5678
+            </motion.a>
 
             {/* small stat row — print captions */}
             <motion.div

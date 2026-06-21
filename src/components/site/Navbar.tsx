@@ -29,10 +29,10 @@ export function Navbar() {
             <span className="text-gold">●</span>&nbsp;&nbsp;Auckland · Wellington · Christchurch
           </p>
           <a
-            href="tel:+918000000000"
+            href="tel:+64212345678"
             className="hidden items-center gap-1.5 font-mono uppercase tracking-[0.28em] text-muted-foreground transition-colors hover:text-foreground sm:inline-flex"
           >
-            <Phone className="h-3 w-3" /> +91 80000 00000
+            <Phone className="h-3 w-3" /> +64 21 234 5678
           </a>
         </div>
       </div>
