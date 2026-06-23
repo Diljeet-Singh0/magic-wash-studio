@@ -1,4 +1,5 @@
-export function Logo({ className }: { className?: string }) {
-  return <img src="/public/steam-clean-logo.png" alt="Steam Clean" className={`object-contain ${className ?? ""}`} />;
-}
+import logo from "@/assets/steam-clean-logo.png";
 
+export function Logo({ className }: { className?: string }) {
+  return <img src={logo} alt="Steam Clean" className={`object-contain ${className ?? ""}`} />;
+}
