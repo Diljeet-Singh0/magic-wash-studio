@@ -102,7 +102,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Organization",
-          name: "AquaDrive",
+          name: "Steam Clean",
           description: "Premium mobile car wash and detailing service.",
           url: "/",
         }),
@@ -112,7 +112,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "WebSite",
-          name: "AquaDrive",
+          name: "Steam Clean",
           url: "/",
         }),
       },
