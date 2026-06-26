@@ -1,0 +1,10 @@
+{
+  "buildCommand": "vite build",
+  "outputDirectory": ".output",
+  "framework": null,
+  "functions": {
+    "server/index.mjs": {
+      "runtime": "nodejs20.x"
+    }
+  }
+}
